@@ -30,7 +30,6 @@ const cardSlice = createSlice({
             const person = {
                 cardholder: `${name.first.toUpperCase()} ${name.last.toUpperCase()}`,
                 cardNumber: 8989458765871298,
-                isActive: true
             }
             state.cardArray.push(person)
         },
