@@ -11,13 +11,17 @@ const Addcard = () => {
 
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm({
         defaultValues: {
-            cardholder: `${cardArray[0]?.cardholder}`
+            cardholder: `${cardArray[0]?.cardholder}`,
+            isActive: false
         },
     })
 
     // watches cardNumber iput
     const cardNumberProcess = watch("cardNumber")
+    const expireYearProcess = watch("expireYear")
+    const expireMonthProcess = watch("expireMonth")
     const ccvProcess = watch("ccv")
+    const vendor = watch("vendor")
 
 
     // handle submit on form
@@ -37,6 +41,7 @@ const Addcard = () => {
                 <div className="card" onClick={()=>{setCardState(prevState => !prevState)}}>
                     <h3>{cardArray[0]?.cardholder}</h3>
                     <p>{cardNumberProcess ? cardNumberProcess.toString().replace(/(\d{4})(?=\d)/g, '$1 ') : "xxxx xxxx xxxx xxxx"}</p>
+                    <p>{expireMonthProcess && expireMonthProcess + " /"} { expireYearProcess && expireYearProcess}</p>
                     <p></p>
                 </div>
             )
@@ -55,7 +60,6 @@ const Addcard = () => {
             {flipCard()}
 
             {/*------- form ------*/}
-            {/*------- fix validation for ------*/}
             <div>
                 <form className="flexColumn" onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="cardNumber">
@@ -87,13 +91,17 @@ const Addcard = () => {
                         {errors.ccv && <span className="error">{errors.ccv.message}</span>}
                     </label>
 
+                    <input type="hidden" {...register("isActive")} />
+
                     <label htmlFor="vendor">
                         <span>Vendor: </span><br />
                         <select id="vendor" {...register("vendor", { required: "this field is required" })} >
-                            <option value="bank1">bank1</option>
-                            <option value="bank2">bank2</option>
-                            <option value="bank3">bank3</option>
+                            <option value="">select option</option>
+                            <option value="bank1">bank 1</option>
+                            <option value="bank2">bank 2</option>
+                            <option value="bank3">bank 3</option>
                         </select>
+                        {errors.vendor && <span className="error">{errors.vendor.message}</span>}
                     </label>
 
                     <button type="submit">Submit</button>

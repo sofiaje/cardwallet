@@ -20,7 +20,7 @@ const cardSlice = createSlice({
             
             // tar emot ett object och pushar in i array
             if (!object) {
-                console.log(false)
+                console.log(action.payload)
                 state.cardArray.push(action.payload)
             } else {
                 console.log("this card number is taken")
@@ -28,7 +28,12 @@ const cardSlice = createSlice({
 
         },
         removeCard: (state, action) => {
-            console.log("remove card")
+            console.log(action.payload)
+            state.cardArray.splice(action.payload, 1)
+        },
+        activateCard: (state, action) => {
+            state.cardArray.map(x => x.isActive = false)
+            state.cardArray[action.payload].isActive = true
         }
     },
     extraReducers: {
@@ -39,7 +44,8 @@ const cardSlice = createSlice({
                 cardholder: `${name.first.toUpperCase()} ${name.last.toUpperCase()}`,
                 cardNumber: 8989458765871298,
                 expireYear: 28,
-                expireMonth: 12
+                expireMonth: 12,
+                isActive: true
             }
             state.cardArray.push(person)
         },
@@ -52,5 +58,5 @@ const cardSlice = createSlice({
     }
 })
 
-export const { addNewUser, removeCard } = cardSlice.actions;
+export const { addNewUser, removeCard, activateCard } = cardSlice.actions;
 export default cardSlice.reducer;
