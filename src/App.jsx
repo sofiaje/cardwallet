@@ -9,7 +9,7 @@ import {
 
 //pages
 import Root from './pages/Root'
-import Addcard from './pages/addCard'
+import Addcard from './pages/AddCard'
 import Cards from './pages/cards'
 
 const router = createBrowserRouter(

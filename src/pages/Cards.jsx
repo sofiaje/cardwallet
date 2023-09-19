@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import Card from "../features/card";
+import Card from "../features/Card";
 import { useState } from "react"
 
 const Cards = () => {

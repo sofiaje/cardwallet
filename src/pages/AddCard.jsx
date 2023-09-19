@@ -55,31 +55,36 @@ const Addcard = () => {
             {flipCard()}
 
             {/*------- form ------*/}
+            {/*------- fix validation for ------*/}
             <div>
                 <form className="flexColumn" onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="cardNumber">
                         <span>Card number: </span><br />
-                        <input id="cardNumber" maxLength="16" {...register("cardNumber", { required: "this field is required", minLength: 16, maxLength: 16 })} /><br />
-                        {errors.cardNumber && <span>Needs to be 16 characters</span>}
+                        <input id="cardNumber" type="number" {...register("cardNumber", { required: "required field, numbers only", minLength: { value: 16, message: "should be 16 characters, numbers only" }, maxLength: { value: 16, message: "should be 16 characters, numbers only" }, pattern: { value: /^[0-9]\d*$/, message: "only numbers please" } })} /><br />
+                        {errors.cardNumber && <span className="error">{errors.cardNumber.message}</span>}
                     </label>
 
                     <label htmlFor="cardholder">
                         <span>Card holder: </span><br />
-                        <input id="cardholder" {...register("cardholder", { required: "this field is required" })} readOnly />
+                        <input id="cardholder" {...register("cardholder", { required: "required field" })} readOnly /><br />
+                        {errors.cardholder && <span className="error">{errors.cardholder.message}</span>}
                     </label>
 
                     <label htmlFor="expireMonth">
                         <span>Expire date: </span><br />
-                        <input id="expireMonth"  placeholder="month"{...register("expireMonth", { required: "this field is required", maxLength: 2 })} />
+                        <input id="expireMonth" type="number" placeholder="month"{...register("expireMonth", { required: "required field", max: {value: 12, message:"enter a correct month"},minLength: { value: 2, message: "please enter a two digit number" }, maxLength: { value: 2, message: "please enter a two digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
+                        {errors.expireMonth && <span className="error">{errors.expireMonth.message}</span>}
                     </label>
 
                     <label htmlFor="expireYear">
-                        <input id="expireYear" placeholder="year" {...register("expireYear", { required: "this field is required", maxLength: 2 })} />
+                        <input id="expireYear" type="number" placeholder="year" {...register("expireYear", { required: "required field", minLength: { value: 2, message: "please enter a two digit number" }, maxLength: { value: 2, message: "please enter a two digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
+                        {errors.expireYear && <span className="error">{errors.expireYear.message}</span>}
                     </label>
 
                     <label htmlFor="ccv">
                         <span>CCV: </span><br />
-                        <input id="ccv" {...register("ccv", { required: "this field is required" })} maxLength="3"/>
+                        <input id="ccv" type="number" {...register("ccv", { required: "required field", minLength: { value: 3, message: "please enter a three digit number" }, maxLength: { value: 3, message: "please enter a three digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
+                        {errors.ccv && <span className="error">{errors.ccv.message}</span>}
                     </label>
 
                     <label htmlFor="vendor">

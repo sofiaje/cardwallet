@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Card = ({ cardholder, cardNumber, isActive, i }) => {
+const Card = ({ cardholder, cardNumber, ccv, expireYear, expireMonth }) => {
     const [activeCard, setActiveCard] = useState(false);
 
     return ( 
@@ -8,6 +8,7 @@ const Card = ({ cardholder, cardNumber, isActive, i }) => {
         {/* <div> */}
             <h3>{cardholder}</h3>
             <p>{cardNumber.toString().replace(/(\d{4})(?=\d)/g, '$1 ')}</p>
+            <p>{expireMonth} / {expireYear}</p>
         </div>
      );
 }

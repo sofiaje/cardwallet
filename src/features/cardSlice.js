@@ -16,8 +16,16 @@ const cardSlice = createSlice({
     },
     reducers: {
         addNewUser: (state, action) => {
-            // tar emot ett object och pushar in i 
-            state.cardArray.push(action.payload)
+            let object = state.cardArray.find(x => x.cardNumber === action.payload.cardNumber)
+            
+            // tar emot ett object och pushar in i array
+            if (!object) {
+                console.log(false)
+                state.cardArray.push(action.payload)
+            } else {
+                console.log("this card number is taken")
+            }
+
         },
         removeCard: (state, action) => {
             console.log("remove card")
@@ -30,6 +38,8 @@ const cardSlice = createSlice({
             const person = {
                 cardholder: `${name.first.toUpperCase()} ${name.last.toUpperCase()}`,
                 cardNumber: 8989458765871298,
+                expireYear: 28,
+                expireMonth: 12
             }
             state.cardArray.push(person)
         },
