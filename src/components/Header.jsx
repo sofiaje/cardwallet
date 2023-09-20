@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
     return ( 
         <header className="flex">
-            <h2>My bank</h2>
+            <h2>EVE</h2>
             <nav>
-                <NavLink to="/">my cards</NavLink>
+                <NavLink to="/cards">my cards</NavLink>
                 <NavLink to="/addcard">add card</NavLink>
 
             </nav>

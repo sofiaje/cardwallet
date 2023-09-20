@@ -9,9 +9,7 @@ export const getCardPerson = createAsyncThunk("cardSlice/getCardPerson", async (
 const cardSlice = createSlice({
     name: "cardSlice",
     initialState: {
-        cardArray: [
-            // { name: "sofia jespersen", cardNumber: 8989473612938212, isActive: false },
-        ],
+        cardArray: [],
         status: "",
     },
     reducers: {
@@ -28,7 +26,6 @@ const cardSlice = createSlice({
 
         },
         removeCard: (state, action) => {
-            console.log(action.payload)
             state.cardArray.splice(action.payload, 1)
         },
         activateCard: (state, action) => {

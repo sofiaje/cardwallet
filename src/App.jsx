@@ -15,14 +15,13 @@ import Cards from './pages/cards'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route index path="/" element={<Cards/>} />
+      <Route index path="/cards" element={<Cards/>} />
       <Route path="/addcard" element={<Addcard />} />
     </Route>
   )
 )
 
 function App() {
-
   return (
     <>
       <RouterProvider router={router} />

@@ -1,6 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "../features/Card";
-import { useState } from "react"
 
 const Cards = () => {
     const { cardArray } = useSelector((state) => state.cardArray);
@@ -11,7 +10,6 @@ const Cards = () => {
                 return (
                     <Card {...x} i={i} key={x.cardNumber} />
                 )
-
             })}
 
         </div>
