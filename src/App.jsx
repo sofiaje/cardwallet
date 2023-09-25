@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,8 +9,8 @@ import {
 
 //pages
 import Root from './pages/Root'
-import Addcard from './pages/AddCard'
-import Cards from './pages/cards'
+import Addcard from './pages/addCard/AddCard'
+import Cards from './pages/cards/Cards'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

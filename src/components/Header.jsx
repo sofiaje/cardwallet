@@ -2,12 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return ( 
-        <header className="flex">
-            <h2>EVE</h2>
+        <header>
+            <h1>EVE-Wallet</h1>
             <nav>
-                <NavLink to="/cards">my cards</NavLink>
-                <NavLink to="/addcard">add card</NavLink>
-
+                <NavLink to="/cards">MY CARDS</NavLink>
+                <NavLink to="/addcard">ADD CARDS</NavLink>
             </nav>
         </header>
      );

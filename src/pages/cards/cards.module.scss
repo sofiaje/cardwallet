@@ -1,0 +1,64 @@
+.myCardsWrapper {
+    padding-bottom: 3rem;
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+.activeCards {
+    padding-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+
+}
+.notActiveCards {
+    position: relative;
+    
+}
+.notActiveCards > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    @media (width >= 1050px) {
+        flex-direction: row;
+    }
+    flex-wrap: wrap;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+
+button.hiddenBtn {
+    position: absolute;
+    display: none;
+    padding: 0.7rem;
+    background-color: rgba(0,0,0,0);
+    top:3.5rem;
+    right: 0.5rem;
+    border-color: #00000000;
+    @media (prefers-color-scheme: light) {
+        color: white;
+    }
+    &:hover {
+        border-color: transparent;
+        background-color: #1e262c;
+        @media (prefers-color-scheme: light) {
+            background-color: #7da5b7;
+        }
+    }
+}
+  
+.card:hover .hiddenBtn {
+    display: inline-block;
+}
+  
+
+@media (prefers-color-scheme: light) {
+    .activeCard {
+        background-color: #478aac;
+      }
+}

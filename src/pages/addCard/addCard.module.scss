@@ -1,0 +1,73 @@
+.formContainer {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+    gap: 0.3rem;
+    input {
+        padding: 0.8rem;
+        border-radius: 4px;
+        width: 100%;
+        background-color: #1e262c;
+
+        background-color: #262f36;
+        // border: 1px solid rgb(201, 201, 201);
+        // border: 1px solid #f8d69b;
+        border: transparent;
+
+        @media (prefers-color-scheme: light) {
+            background-color: #ffffff;
+
+        }
+    }
+    select {
+        padding: 0.8rem;
+        padding-bottom: 1rem;
+        border-radius: 4px;
+        width: 100%;
+        background-color: #1e262c;
+        background-color: #242d34;
+        
+        border: 1px solid rgb(201, 201, 201);
+        border: 1px solid #f8d69b;
+        border: transparent;
+        border-right: 1rem solid transparent;
+
+
+        @media (prefers-color-scheme: light) {
+            background-color: #ffffff;
+        }
+    }
+    label {
+        padding-top: 0.4rem;
+    }
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+  
+.error {
+    color: rgb(254, 154, 154);
+    padding: 0.3rem;
+    border-radius: 4px;
+    background-color: rgb(31, 26, 26);
+    display: inline-block;
+    font-size: small;
+    width: 100%;
+    @media (prefers-color-scheme: light) {
+        color: red;
+        background-color: rgb(253, 230, 230);
+    }
+}
+
+.cardBack {
+    background-color: #2e2e2e;
+    @media (prefers-color-scheme: light) {
+        background-color: #f8f8f8;
+    }
+}
+
+
+
