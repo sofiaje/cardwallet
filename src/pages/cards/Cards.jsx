@@ -1,26 +1,29 @@
 import classes from "./cards.module.scss"
 import { useSelector } from "react-redux";
 import Card from "../../features/Card";
+import { NavLink } from "react-router-dom";
 
 const Cards = () => {
-    const { cardArray } = useSelector((state) => state.cardArray);
+    const { cardArray, status } = useSelector((state) => state.cardArray);
 
     return (
         <div className={classes.myCardsWrapper}>
+
+            {status === "failure" && "Something went wrong, please check your connection and try again"}
+
             <div className={classes.activeCards}>
                 {cardArray.map((x, i) => {
-                    return x.isActive && <Card {...x} i={i} key={x.cardNumber} />
+                    return x.isActive && <Card {...x} key={x.id} />
                 })}
             </div>
             
-            {cardArray.length > 1 &&<h2>Inactive cards</h2>}
+            {cardArray.length > 1 &&<h2 style={{paddingTop: "2rem"}}>Inactive cards</h2>}
             <div className={classes.notActiveCards}>
-                <div>
-                    {cardArray.map((x, i) => {
-                        return x.isActive === false && <Card {...x} i={i} key={x.cardNumber} />
+                {cardArray.map((x, i) => {
+                        return x.isActive === false && <Card {...x} key={x.id} />
                     })}
-                </div>
             </div>
+            {(cardArray.length < 4 && status === "success") && <NavLink to="/addcard"><button className={classes.addBtn}>ADD NEW CARD</button></NavLink>}
         </div>
     );
 }

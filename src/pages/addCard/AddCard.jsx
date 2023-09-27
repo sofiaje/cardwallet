@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
 import { addNewUser } from "../../features/cardSlice"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 
@@ -35,7 +35,7 @@ const Addcard = () => {
     // handle submit on form
     const onSubmit = (data) => {
         let object = cardArray.find(x => x.cardNumber === data.cardNumber)
-        { object && setErrorText("The number is taken") }
+        { object && setErrorText("This card number is taken") }
         { cardArray.length >= 4 && setErrorText("There can only be four cards") }
 
         if (cardArray.length < 4 && !object) {
@@ -43,7 +43,6 @@ const Addcard = () => {
             reset()
             navigate("/cards")
         }
-
     }
 
 
@@ -125,9 +124,11 @@ const Addcard = () => {
                         {errors.vendor && <span className={classes.error}>{errors.vendor.message}</span>}
                     </label>
 
-                    <button type="submit" style={{ marginTop: "1rem" }}>Add card</button>
+                    <button type="submit" style={{ marginTop: "1rem" }}>ADD CARD</button>
                 </form>
                 {errorText && <span className={classes.error}>{errorText}</span>}
+
+                {/* <NavLink to="/cards">back to my cards</NavLink> */}
             </div>
         </div>
     );

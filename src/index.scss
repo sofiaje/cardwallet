@@ -82,34 +82,30 @@ a:hover {
       color: #2c5b73;
   }
 }
-a.active{
-  border-bottom: 1px solid;
-  color: #f8d69b;
-  @media (prefers-color-scheme: light) {
-    color: #2c5b73;
-  }
-}
 
 /* ----------- btn ------------ */
 
 button {
   border-radius: 8px;
-  border: 1px solid rgb(201, 201, 201);
+  border: 1px solid #f8d69b;
+  color: #f8d69b;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ffffff00;
+  background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
-  transition: border-color 0.5s;
+  transition: border-color 0.5s, color 0.5s;
+  font-family: 'Oswald', sans-serif;
   @media (prefers-color-scheme: light) {
-      border: 2px solid white;
-    }
+    border-color: #5a7c8b;
+    color:#4d6a76
+  }
 }
 button:hover {
-  border-color: #f8d69b;
   @media (prefers-color-scheme: light) {
-    border: 2px solid #3c7592;
+    color:#4d6975;
+    border: 1px solid #4d6975;
   }
 }
 button:focus,
@@ -158,7 +154,7 @@ button:focus-visible {
   p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   h2 {

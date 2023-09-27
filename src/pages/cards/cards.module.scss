@@ -6,23 +6,17 @@
 }
 
 .activeCards {
-    padding-bottom: 2.5rem;
     display: flex;
     justify-content: center;
-
+    padding-bottom: 0rem;
 }
 .notActiveCards {
     position: relative;
-    
-}
-.notActiveCards > div {
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.5rem;
-    @media (width >= 1050px) {
-        flex-direction: row;
-    }
+    gap: 0.7rem;
     flex-wrap: wrap;
 }
 
@@ -50,6 +44,10 @@ button.hiddenBtn {
             background-color: #7da5b7;
         }
     }
+}
+
+.addBtn {
+    width: 100%;
 }
   
 .card:hover .hiddenBtn {
