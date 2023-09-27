@@ -8,10 +8,9 @@ import { addNewUser } from "../../features/card/cardSlice";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Addcard = () => {
-    const { cardArray } = useSelector((state) => state.cardArray)
+    const { cardArray } = useSelector((state) => state.cardArray);
+
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const [cardState, setCardState] = useState(true)
@@ -41,7 +40,7 @@ const Addcard = () => {
         if (cardArray.length < 4 && !object) {
             dispatch(addNewUser(data))
             reset()
-            navigate("/cards")
+            navigate("/")
         }
     }
 

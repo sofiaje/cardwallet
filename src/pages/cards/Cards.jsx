@@ -6,6 +6,7 @@ import Card from "../../features/card/Card";
 const Cards = () => {
     const { cardArray, status } = useSelector((state) => state.cardArray);
 
+
     return (
         <div className={classes.myCardsWrapper}>
 
@@ -18,7 +19,7 @@ const Cards = () => {
             </div>
             
             {cardArray.length > 1 &&<h2 style={{paddingTop: "2rem"}}>Inactive cards</h2>}
-            <div className={classes.notActiveCards}>
+            <div className={classes.inactiveCards}>
                 {cardArray.map((x, i) => {
                         return x.isActive === false && <Card {...x} key={x.id} />
                     })}

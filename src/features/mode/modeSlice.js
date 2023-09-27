@@ -21,7 +21,6 @@ const modeSlice = createSlice({
                 document.documentElement.setAttribute("data-theme", "light"); 
            }
         }
-
     }
 })
 

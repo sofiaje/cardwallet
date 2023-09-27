@@ -15,7 +15,7 @@ import Cards from './pages/cards/Cards'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route index path="/cards" element={<Cards/>} />
+      <Route index element={<Cards/>} />
       <Route path="/addcard" element={<Addcard />} />
     </Route>
   )

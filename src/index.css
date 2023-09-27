@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto:wght@100;300&family=Ubuntu+Mono:wght@600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto:wght@100;300&family=Ubuntu+Mono:wght@600&display=swap");
 :root {
   color-scheme: light dark;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--bgColor);
   color: var(--textColor);
-
   line-height: 1.5;
   font-weight: 400;
   transition: background-color 0.5s;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 * {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
+
 .pageWrapper {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 main {
   margin: auto;
   flex-grow: 1;
@@ -37,19 +37,19 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 0 1rem 1rem;
-  h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-  }
-  button {
-    border-color: transparent;
-    &:hover {
-      border-color: transparent;
-    }
-    svg {
-      fill: var(--linkColor);
-    }
-  }
+}
+header h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
+header button {
+  border-color: transparent;
+}
+header button:hover {
+  border-color: transparent;
+}
+header button svg {
+  fill: var(--linkColor);
 }
 
 /* ----------- text links ------------ */
@@ -69,13 +69,15 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   cursor: pointer;
 }
+
 button:hover {
   border: 1px solid var(--btnHover);
-  color:var(--btnHover);
+  color: var(--btnHover);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -88,12 +90,12 @@ button.hiddenBtn {
   background-color: transparent;
   border-color: transparent;
   color: white;
-  top:3.5rem;
+  top: 3.5rem;
   right: 0.5rem;
-  &:hover {
-      border-color: transparent;
-      background-color: var(--hiddenBtnHover);
-  }
+}
+button.hiddenBtn:hover {
+  border-color: transparent;
+  background-color: var(--hiddenBtnHover);
 }
 
 .card {
@@ -112,33 +114,32 @@ button.hiddenBtn {
   color: white;
   margin-top: 0;
   transition: background-color 0.5s;
-
-  div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  svg {
-    fill: white;
-  }
-  img {
-    width: 40px;
-  }
-  .flexCol {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-align: left;
-  }
-  p {
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 1rem;
-  }
-  h2 {
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-family: 'Ubuntu Mono', monospace;
-    padding-bottom: 0.3rem;
-  }
 }
+.card div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card svg {
+  fill: white;
+}
+.card img {
+  width: 40px;
+}
+.card .flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: left;
+}
+.card p {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1rem;
+}
+.card h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Ubuntu Mono", monospace;
+  padding-bottom: 0.3rem;
+}/*# sourceMappingURL=index.css.map */
