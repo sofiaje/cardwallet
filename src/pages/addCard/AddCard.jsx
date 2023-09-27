@@ -4,9 +4,9 @@ import handleVendor from "../../helpers/handleVendor"
 
 import { useSelector, useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
-import { addNewUser } from "../../features/cardSlice"
+import { addNewUser } from "../../features/card/cardSlice";
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -97,7 +97,7 @@ const Addcard = () => {
                     </label>
 
                     <div className={classes.flex}>
-                        <input id="expireMonth" type="number" placeholder="month"{...register("expireMonth", { required: "Required field", max: { value: 12, message: "Enter a correct month" }, minLength: { value: 2, message: "please enter a two digit number" }, maxLength: { value: 2, message: "Please enter a two digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
+                        <input id="expireMonth" type="number" placeholder="month"{...register("expireMonth", { required: "Required field", max: { value: 12, message: "Enter a correct month" }, minLength: { value: 2, message: "Please enter a two digit number" }, maxLength: { value: 2, message: "Please enter a two digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
 
                         <input id="expireYear" type="number" placeholder="year" {...register("expireYear", { required: "Required field", minLength: { value: 2, message: "Please enter a two digit number" }, maxLength: { value: 2, message: "Please enter a two digit number" }, pattern: /^[0-9]\d*$/ })} /><br />
                     </div>
@@ -117,9 +117,9 @@ const Addcard = () => {
                         <span>Vendor </span><br />
                         <select id="vendor" {...register("vendor", { required: "This field is required" })} >
                             <option value="">select option</option>
-                            <option value="bank1">Amex</option>
-                            <option value="bank2">Visa</option>
-                            <option value="bank3">MasterMind</option>
+                            <option value="amex">Amex</option>
+                            <option value="visa">Visa</option>
+                            <option value="mastermind">MasterMind</option>
                         </select>
                         {errors.vendor && <span className={classes.error}>{errors.vendor.message}</span>}
                     </label>

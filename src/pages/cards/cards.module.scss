@@ -4,13 +4,12 @@
         font-size: 1rem;
     }
 }
-
 .activeCards {
     display: flex;
     justify-content: center;
     padding-bottom: 0rem;
 }
-.notActiveCards {
+.inactiveCards {
     position: relative;
     padding-bottom: 2rem;
     display: flex;
@@ -19,44 +18,29 @@
     gap: 0.7rem;
     flex-wrap: wrap;
 }
-
 .flex {
     display: flex;
     justify-content: space-between;
     gap: 0.2rem;
 }
-
 button.hiddenBtn {
     position: absolute;
     display: none;
     padding: 0.7rem;
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
     top:3.5rem;
     right: 0.5rem;
-    border-color: #00000000;
-    @media (prefers-color-scheme: light) {
-        color: white;
-    }
     &:hover {
         border-color: transparent;
-        background-color: #1e262c;
-        @media (prefers-color-scheme: light) {
-            background-color: #7da5b7;
-        }
+        background-color: var(--hiddenBtnHover);
     }
 }
-
 .addBtn {
     width: 100%;
-}
-  
+    margin-top: 1.5rem;
+} 
 .card:hover .hiddenBtn {
     display: inline-block;
-}
-  
-
-@media (prefers-color-scheme: light) {
-    .activeCard {
-        background-color: #478aac;
-      }
 }

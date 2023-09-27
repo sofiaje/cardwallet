@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux";
-import { activateCard, removeCard } from "../features/cardSlice"
-import classes from "../pages/cards/cards.module.scss"
+import { activateCard, removeCard } from "../../features/card/cardSlice"
+import classes from "../../pages/cards/cards.module.scss"
 import chip from "/assets/chip.png"
-import handleVendor from "../helpers/handleVendor"
-
+import handleVendor from "../.././helpers/handleVendor";
 
 const Card = ({ cardholder, cardNumber, isActive, expireYear, expireMonth, vendor, id}) => {
     const dispatch = useDispatch()
@@ -12,7 +11,6 @@ const Card = ({ cardholder, cardNumber, isActive, expireYear, expireMonth, vendo
         e.stopPropagation()
         dispatch(removeCard(id))
     }
-
     const cardClickHandler = (isActive, id) => {
         {!isActive && dispatch(activateCard(id))}
     }

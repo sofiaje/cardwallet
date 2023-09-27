@@ -1,20 +1,26 @@
 import { Outlet, useNavigate} from "react-router-dom";
 import { useEffect } from "react";
-import { getCardPerson } from "../features/cardSlice"
-import { useSelector, useDispatch } from "react-redux";
+import { getCardPerson } from "../features/card/cardSlice"
+import { getUserPreference, setTheme } from "../features/mode/modeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const Root = () => {
-    const { status } = useSelector((state) => state.cardArray);
+    const { darkmode } = useSelector((state) => state.darkmode);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getCardPerson())
+        dispatch(getUserPreference())
         navigate("/cards")
     }, [])
+
+    useEffect(() => {
+        dispatch(setTheme())
+    }, [darkmode])
     
     return ( 
         <div className="pageWrapper">
@@ -22,7 +28,6 @@ const Root = () => {
             <main>
                 <Outlet />
             </main>
-            <Footer />
         </div>
      );
 }

@@ -1,7 +1,7 @@
 import classes from "./cards.module.scss"
 import { useSelector } from "react-redux";
-import Card from "../../features/Card";
 import { NavLink } from "react-router-dom";
+import Card from "../../features/card/Card";
 
 const Cards = () => {
     const { cardArray, status } = useSelector((state) => state.cardArray);

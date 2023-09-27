@@ -37,7 +37,7 @@ const cardSlice = createSlice({
                 expireMonth: 12,
                 expireYear: 28,
                 isActive: true,
-                vendor: "bank3", 
+                vendor: "amex", 
                 id: nanoid()
             }
             state.cardArray.push(person)

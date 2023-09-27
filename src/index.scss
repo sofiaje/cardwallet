@@ -1,118 +1,100 @@
-// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto:wght@100;300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600&family=Lunasima&family=Oswald:wght@200;300;400&family=Roboto:wght@100;300&family=Ubuntu+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto:wght@100;300&family=Ubuntu+Mono:wght@600&display=swap');
 
 :root {
+  color-scheme: light dark;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textColor);
 
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(242, 242, 242, 0.87);
-  background-color: #1e262c;
+  transition: background-color 0.5s;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  @media (prefers-color-scheme: light) {
-      color: #284e61;
-      background-color: #efefef;
-  }
 }
-
 * {
   padding:0;
   margin:0;
   box-sizing: border-box;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .pageWrapper {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 main {
   margin: auto;
   flex-grow: 1;
   padding: 1rem;
-  @media (prefers-color-scheme: light) {
-    background: none;
-  }
 }
 
- /* ------ header, footer -------- */
+/* ------ header, footer -------- */
 header {
-  padding: 1rem;
   display: flex;
-  font-size: 1.1rem;
   justify-content: space-between;
-  align-items: center;
-  font-family: 'Oswald', sans-serif;
+  padding: 1rem;
   h1 {
+    font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
   }
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
+  button {
+    border-color: transparent;
+    &:hover {
+      border-color: transparent;
+    }
+    svg {
+      fill: var(--linkColor);
+    }
+  }
 }
 
 /* ----------- text links ------------ */
 a {
   font-weight: 500;
-  color: #f8d69b;
+  color: var(--linkColor);
   text-decoration: inherit;
-  @media (prefers-color-scheme: light) {
-    color: #2c5b73;
-  }
-}
-a:hover {
-  color: #f8d69b;
-  @media (prefers-color-scheme: light) {
-      color: #2c5b73;
-  }
 }
 
 /* ----------- btn ------------ */
-
 button {
+  background-color: transparent;
+  color: var(--linkColor);
+  border: 1px solid var(--borderBtn);
+  transition: border-color 0.5s, color 0.5s;
   border-radius: 8px;
-  border: 1px solid #f8d69b;
-  color: #f8d69b;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: rgba(255, 255, 255, 0);
-  cursor: pointer;
-  transition: border-color 0.5s, color 0.5s;
   font-family: 'Oswald', sans-serif;
-  @media (prefers-color-scheme: light) {
-    border-color: #5a7c8b;
-    color:#4d6a76
-  }
+  cursor: pointer;
 }
 button:hover {
-  @media (prefers-color-scheme: light) {
-    color:#4d6975;
-    border: 1px solid #4d6975;
-  }
+  border: 1px solid var(--btnHover);
+  color:var(--btnHover);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button.hiddenBtn {
+  position: absolute;
+  display: none;
+  padding: 0.7rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  top:3.5rem;
+  right: 0.5rem;
+  &:hover {
+      border-color: transparent;
+      background-color: var(--hiddenBtnHover);
+  }
+}
 
 .card {
   position: relative;
@@ -125,21 +107,19 @@ button:focus-visible {
   border-radius: 8px;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  background-color: #242d34;
-  background: linear-gradient(30deg, #242d34, #0f1315);
+  background-color: var(--cardBg);
+  background: var(--cardBgLinear);
   color: white;
   margin-top: 0;
-  @media (prefers-color-scheme: light) {
-    background-color: #6e94a5;
-    background: linear-gradient(20deg, #7da5b7, #4d6975);
-  }
+  transition: background-color 0.5s;
+
   div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   svg {
-    fill: #ffffff;
+    fill: white;
   }
   img {
     width: 40px;
@@ -152,15 +132,12 @@ button:focus-visible {
     text-align: left;
   }
   p {
-    font-family: 'Oswald', sans-serif;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 1rem;
   }
-  
   h2 {
     font-size: 1.6rem;
     font-weight: 400;
-    font-family: 'Inconsolata', monospace;
     font-family: 'Ubuntu Mono', monospace;
     padding-bottom: 0.3rem;
   }

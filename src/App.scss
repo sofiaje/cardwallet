@@ -1,0 +1,31 @@
+:root {
+    --bgColor: #efefef;
+    --textColor: #284e61;
+
+    --linkColor: #4d6a76;
+    --borderBtn: #6c8996;
+    --btnHover: #344b55;
+    --cardBg: #6e94a5;
+    --cardBgLinear: linear-gradient(20deg, #7da5b7, #4d6975);
+    --inputBgColor: #ffffff;
+    --hiddenBtnHover: #7da5b7;
+    
+    --errorText: #d50000;
+    --errorBg: #fde6e6;
+    
+}
+[data-theme="dark"] {
+    --bgColor: #1e262c;
+    --textColor: rgb(220, 220, 220);
+    
+    --linkColor: #f8d69b;
+    --borderBtn: #f8d69b;
+    --btnHover: #f8d69b;
+    --cardBg: #242d34;
+    --cardBgLinear: linear-gradient(30deg, #242d34, #0f1315);
+    --hiddenBtnHover: #1e262c;
+    --inputBgColor: #262f36;
+
+    --errorText: #fe9a9a;
+    --errorBg: #1f1a1a;
+}

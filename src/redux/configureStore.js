@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cardSlice from "../features/cardSlice";
+import cardSlice from "../features/card/cardSlice";
+import modeSlice from "../features/mode/modeSlice"
 
 const store = configureStore({
     reducer: {
-        cardArray: cardSlice
+        cardArray: cardSlice,
+        darkmode: modeSlice
     }
 })
 
